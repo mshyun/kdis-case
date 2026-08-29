@@ -100,10 +100,11 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   text-wrap: balance;
 }
 .display--hero {
-  /* Anton is extremely narrow — at 104px the hero filled only 54% of the
-     1280px column. The max goes up so it reads as poster scale; the 42px
-     floor stays, because above it "TO SMART AGRICULTURE" overflows 350px. */
-  font-size: clamp(2.625rem, 9vw, 8.5rem); line-height: .92;
+  /* Anton has one weight and it is a heavy one, so the only lever on how
+     thick the hero reads is size. 136px was too much mass; this sits just
+     under the original 104px. The 42px floor stays, because above it
+     "TO SMART AGRICULTURE" overflows a 350px column. */
+  font-size: clamp(2.5rem, 6.8vw, 6.25rem); line-height: .94;
 }
 .display--section { font-size: clamp(2rem, 3.9vw, 3.5rem); letter-spacing: -.03em; }
 .display--sub { font-size: clamp(1.5rem, 2vw, 1.875rem); line-height: 1; }
