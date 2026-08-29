@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kdis-alumni-policy-network.vercel.app/sitemap.xml

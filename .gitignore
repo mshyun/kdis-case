@@ -1,0 +1,18 @@
+# Drop folder for files handed over by hand. The originals live here; the
+# normalised copies that the site actually serves are under site/media/.
+.orca/
+
+# The decks are served from Google Drive, not from this repository. The local
+# copies stay out of git; design/slides keeps only manifest.json, which
+# site/build.mjs reads for the page counts and sizes on the download buttons.
+design/slides/*.pdf
+site/media/slides/
+
+# Tooling
+node_modules/
+.vercel/
+.playwright-mcp/
+
+# OS
+.DS_Store
+Thumbs.db

@@ -1,0 +1,35 @@
+{
+  "artboards": [
+    { "file": "Main.dc.html", "title": "Desktop — Competition (first page)", "x": 0, "y": 0, "w": 1440, "h": 8000 },
+    { "file": "Conference.dc.html", "title": "Desktop — Conference", "x": 1600, "y": 0, "w": 1440, "h": 4860 },
+    { "file": "ConferenceModal.dc.html", "title": "Desktop — Conference / Player Modal", "x": 3200, "y": 0, "w": 1440, "h": 900 },
+    { "file": "MobileCompetition.dc.html", "title": "Mobile — Competition (1/2)", "x": 4800, "y": 0, "w": 390, "h": 5080 },
+    { "file": "MobileCompetition2.dc.html", "title": "Mobile — Competition (2/2)", "x": 5350, "y": 0, "w": 390, "h": 4890 },
+    { "file": "MobileConference.dc.html", "title": "Mobile — Conference", "x": 5900, "y": 0, "w": 390, "h": 8000 },
+    { "file": "MobileMenu.dc.html", "title": "Mobile — Menu open", "x": 6450, "y": 0, "w": 390, "h": 844 }
+  ],
+  "annotations": [
+    {
+      "id": "design-system",
+      "x": -640,
+      "y": 0,
+      "w": 520,
+      "text": "DESIGN SYSTEM\n\nPalette (from the reference site's own CSS):\ncream #FDFBF5 · cream-deep #F7F5E8 · sand #EBEBE0 · sand-mid #C0C0B8 · gray #929289 · gray-deep #5E5E58 · ink #211F15 · teal-deep #0B7677 · teal-forest #0E4E4A · teal-mid #74ABA1 · teal-light #AFC7B8\nHairline rgba(33,31,21,.16) · soft divider rgba(33,31,21,.09)\n\nType: Anton (display, uppercase, tracking -.02em, line-height .92) · Roboto Condensed 600/700 (labels, card titles, UI) · Roboto 400 (body, line-height 1.65)\n\nGrid: 1280px content, 80px margins, 24px gutter. Section rhythm 128px desktop / 72px mobile. Radius 4px chips and buttons, 8px cards, 0 on full-bleed panels.\n\nCharacter: flat editorial. Hairline rules, large type, full-bleed colour panels. No heavy shadows, no glass, no gradients.\n\nPrimary nav sits as full-height tabs on the header's bottom rule: 15px Roboto Condensed 700, tracking .12em, the active item in ink over a 3px teal-deep bar, inactive in gray-deep. Competition leads, Conference follows, then a hairline and the Submit a Case button.\n\nOn mobile that nav becomes a hamburger opening a full-screen teal-forest sheet (see the Menu open artboard) — the same dark-overlay language as the player modal. Two destinations share the height between header and CTA equally, set in Anton at 52px, each carrying one line of real detail. The current page is marked by a teal-mid bar running the full height of its row, and Submit a Case is anchored at the bottom within thumb reach."
+    },
+    {
+      "id": "motion-spec",
+      "x": -640,
+      "y": 800,
+      "w": 520,
+      "text": "MOTION SPEC — for implementation\n\nThese artboards show the resting state. Build these behaviours in code:\n\n1. Hero reveal — display lines in overflow-hidden rows sliding up from 100%, 0.9s cubic-bezier(.2,.7,.2,1), 80ms stagger.\n2. Scroll reveal — every section: opacity 0 to 1 plus translateY 18px to 0, 0.55s ease, IntersectionObserver threshold 0.15, fires once.\n3. Filter transition — FLIP layout animation, 0.45s cubic-bezier(.2,.7,.3,1). Exiting cards fade and scale(.96); entering fade in at scale(1); survivors glide to the new position.\n4. Card hover — thumbnail scale(1.06) over 0.6s, teal-deep overlay 0 to .18 opacity, play badge scale(1.12), title underline sweep left to right.\n5. Modal — scrim teal-forest at 88% fading in 0.3s; panel scale(.94) to 1 and translateY(16px) to 0 over 0.4s. Esc and scrim click close.\n6. Sticky header — past 80px scroll, height 88px to 64px, backdrop blur plus bottom hairline. The active tab's bar stays welded to the bottom rule as it shrinks.\n7. Cursor glow — desktop only, soft teal-mid radial following the pointer at low opacity, mix-blend-mode multiply.\n8. Counters — hero stat row counts up from 0 on reveal.\n9. Scroll progress — 3px teal-deep bar pinned to the top of the viewport.\n10. prefers-reduced-motion: reduce — disable every transition and animation above; render final states immediately. Required, not optional. The reference site already honours this."
+    },
+    {
+      "id": "to-be-filled",
+      "x": -640,
+      "y": 2020,
+      "w": 520,
+      "text": "TO BE FILLED — placeholders on purpose\n\n1. Logo slot — the header wordmark and the dashed KDI SCHOOL slot in the footer await an official logo file. Nothing here imitates a real logo. The ADB slot was removed on 28 August.\n2. Hero background — vector contour motif standing in for a conference photograph. Swap when photos arrive.\n3. SUBMIT A CASE — every instance needs the submission form destination.\n\nWORTH A SECOND LOOK\nOn the Key Dates timeline, Expert Review and Results and Awards both read 31 October 2026. That may be intended, but two milestones landing on one date reads oddly on a timeline.\n\nSLIDE DECKS\nAll 13 talks have a deck: 426 pages, 72 MB in total, from 10 to 102 pages each. Every thumbnail — 12 cards plus the keynote banner — carries a PDF mark top-right so slides are visible while scanning. The player modal then carries a DOWNLOAD SLIDES button with that talk's real page count and file size; the artboard shows the modal once, but the button belongs on all 13.\n\nThe files themselves are NOT in this canvas — 72 MB will not fit and an artboard cannot serve a file. On the real site, host them and point each button at its own deck. Files are prepared as slides/<videoId>.pdf, keyed exactly like the thumbnails.\n\nARTBOARD CEILING\nAn artboard frame cannot exceed 8000px; anything taller is silently clipped to it. The mobile Competition page runs about 9700px, so it is shown as two artboards, (1/2) and (2/2), cut between who may enter and how to enter. Desktop Competition (7948px) and mobile Conference (7895px) sit just under the ceiling — check the footer still renders if you add copy to either.\n\nData note: session thumbnails are the real YouTube frames for all 13 talks. Speaker names, roles, affiliations and talk titles come from the source spreadsheet, with four transcription errors corrected (Monitoring, Floods, Sustainable Vertical Farming, Asian Development Bank).\n\nTerminology: a SESSION is one of the five thematic tracks; a TALK is one recorded presentation, of which there are thirteen including the keynote. The page is called Conference because it covers the whole April event, not a single session."
+    }
+  ],
+  "launch": { "view": "canvas" }
+}
