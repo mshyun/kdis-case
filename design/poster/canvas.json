@@ -1,0 +1,26 @@
+{
+  "artboards": [
+    {
+      "file": "Main.dc.html",
+      "title": "A3 poster \u2014 297 \u00d7 420 mm",
+      "x": 0,
+      "y": 0,
+      "w": 1123,
+      "h": 1587,
+      "print": "fixed"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "print-notes",
+      "x": -560,
+      "y": 0,
+      "w": 460,
+      "text": "A3 POSTER \u2014 297 x 420 mm\n\nDrawn at 1123 x 1587 px, which is 96 px per inch, so Export PDF prints it as one A3 page at true size. It scales down to A4 without reflowing.\n\nType, palette and the contour motif come from the live site. Body copy sits at 17-19px (12pt+) and the headline is 128px so it carries across a corridor.\n\nThe QR is live \u2014 it encodes the Google Form, forms.gle/f1AeBRNezv9K6Mjq9. Scan it before printing.\n\nONE PLACEHOLDER: [WEBSITE URL]. The Vercel address was not known when this was drawn. Replace it with the deployed URL, or say the word and I will."
+    }
+  ],
+  "launch": {
+    "view": "focused",
+    "file": "Main.dc.html"
+  }
+}
